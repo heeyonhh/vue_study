@@ -33,3 +33,15 @@
   name: "josh"
 
 
+  function Vue(){
+  this.logText = function(){
+    console.log('hello');
+  }
+  }
+
+  var vm = new Vue();
+
+  vm.logText();
+  로그 hello
+
+
