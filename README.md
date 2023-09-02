@@ -16,6 +16,7 @@
 -> vm 콘솔 : 뷰에서 제공하는 api & 속성
 
 # 인스턴스 생성
+<<<<<<< HEAD
 
 - 생성자 함수 객체 생성
 
@@ -43,3 +44,34 @@
 
   vm.logText();
   로그 hello
+=======
+
+- 생성자 함수 객체 생성
+
+  funtion Person(name, job){
+   this.name = name;
+   this.job = job;
+  }
+  
+  var p = new Person('josh', 'developer');
+  
+  -> p 콘솔
+  
+  Object { name: "josh", job: "developer" }
+  job: "developer"
+  name: "josh"
+
+
+  function Vue(){
+  this.logText = function(){
+    console.log('hello');
+  }
+  }
+
+  var vm = new Vue();
+
+  vm.logText();
+  로그 hello
+
+
+>>>>>>> bde5177a94681deb208620a4a0f85a0f32245ae7
