@@ -14,3 +14,22 @@
  </script>
 
 -> vm 콘솔 : 뷰에서 제공하는 api & 속성
+
+# 인스턴스 생성
+
+- 생성자 함수 객체 생성
+
+  funtion Person(name, job){
+   this.name = name;
+   this.job = job;
+  }
+  
+  var p = new Person('josh', 'developer');
+  
+  -> p 콘솔
+  
+  Object { name: "josh", job: "developer" }
+  job: "developer"
+  name: "josh"
+
+
