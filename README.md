@@ -72,6 +72,3 @@
 
   vm.logText();
   로그 hello
-
-
->>>>>>> bde5177a94681deb208620a4a0f85a0f32245ae7
