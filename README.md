@@ -41,3 +41,17 @@
   
     vm.logText();
     로그 hello
+
+- 인스턴스 속성 등록
+
+      var vm = new Vue({
+      el: '#app',
+      data: {
+        message: 'hi'
+      },
+      methods: {
+    
+      },
+      created: function() {
+    
+      }});
