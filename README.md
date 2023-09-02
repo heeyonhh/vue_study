@@ -113,3 +113,29 @@
 
 ## Props
 
+        <div id="app">
+        <app-header v-bind:propsdata="message"></app-header>
+        <app-content v-bind:propsdata="num"></app-content>
+        </div>
+        
+        var appHeader = {
+          // template : '<h1>header</h1>',
+          template : '<h1>{{propsdata}}</h1>',
+          props: ['propsdata']
+        }
+        var appContent = {
+          template : '<h1>{{propsdata}}</h1>',
+          props: ['propsdata']
+        }
+        
+        new Vue({
+          el: '#app',
+          components: {
+            'app-header': appHeader,
+            'app-content': appContent
+          },
+          data: {
+            message: 'hi props',
+            num: 10
+          }
+        })
