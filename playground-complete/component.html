@@ -10,6 +10,13 @@
   <div id="app">
     <app-header></app-header>
     <app-content></app-content>
+    <app-footer></app-footer>
+  </div>
+
+  <div id="app2">
+    <app-header></app-header>
+    <app-content></app-content>
+    <app-footer></app-footer>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -22,9 +29,25 @@
     Vue.component('app-content', {
       template: '<div>Content</div>'
     });
+    // Vue.component('app-footer', {
+    //   template: '<footer>Footer</footer>'
+    // });
 
+    //지역 컴포넌트 등록
     new Vue({
       el: '#app',
+      components: {
+        'app-footer': {
+          template: '<footer>Footer</footer>'
+        }
+      },
+      methods: {
+
+      }
+    });
+
+    new Vue({
+      el: '#app2'
     });
   </script>
 </body>
