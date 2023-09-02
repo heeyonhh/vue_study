@@ -85,3 +85,12 @@
         });
 
   - 지역 컴포넌트
+
+        new Vue({
+          el: '#app',
+          components: {
+            'app-footer': {
+              template: '<footer>Footer</footer>'
+            }}});
+
+        태그 등록
