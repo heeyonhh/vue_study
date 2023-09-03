@@ -148,6 +148,57 @@ single page application : 일반적 페이지는 전체가 다시 로딩 되지�
 
 ## Emit
 
+        <!-- 이밋 : 자식 > 부모 -->
+        <div id="app">
+            <!-- 양방향으로 잘 전달됬는지 확인 -->
+            {{number}}
+            <!-- 3. 부모에게 전달 -->
+            <num-input v-bind:value.sync="number"></num-input>
+        </div>
+        <script src="vue.js"></script>
+        <script>
+            //1000 -> 1,000
+            Vue.component('num-input', {
+                template: '<input type="text" v-model="number" v-on:keypress="keypress($event)" v-on:keyup="keyup()" />',
+                props: ['value'],
+                //부모에서 전달 받을 값
+                data: function () {
+                    return {
+                        number: null
+                    }
+                },
+                methods: {
+                    keypress: function (e) {
+                        if (e && e.keyCode > 31 && (e.keyCode < 48 || e.keyCode > 57)) {
+                            e.preventDefault();
+                        }
+                    },
+                    keyup: function () {
+                        var value = this.number;
+        
+                        if (value) {
+                            value = value.toString().split(',').join('');
+                            this.number = value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                        }
+        
+                        //this.value = this.number; 대신 1. 부모에게 전달
+                        this.$emit('update:value', value);
+                    }
+                },
+                created: function () {
+                    this.number = this.value;
+                }
+            });
+        
+            new Vue({
+                el: '#app',
+                data: {
+                    number: null
+                    //1000
+                }
+                //2. 부모에게 전달할 값
+            });
+        </script>
 ## 라우터
 
 ## HTTP 통신 라이브러리 axios
