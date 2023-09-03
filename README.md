@@ -1,3 +1,9 @@
+## Vue
+
+single page application : 일반적 페이지는 전체가 다시 로딩 되지만 이동하는 부분만 재로딩
+
+-> 가볍고 빠르다, 렌더링 속도가 빠름, 서버 트래픽 줄어듬
+
 ## 인스턴스 등록
 
     <div id="app>
@@ -113,3 +119,41 @@
 
 ## Props
 
+        <div id="app">
+        <app-header v-bind:propsdata="message"></app-header>
+        <app-content v-bind:propsdata="num"></app-content>
+        </div>
+        
+        var appHeader = {
+          // template : '<h1>header</h1>',
+          template : '<h1>{{propsdata}}</h1>',
+          props: ['propsdata']
+        }
+        var appContent = {
+          template : '<h1>{{propsdata}}</h1>',
+          props: ['propsdata']
+        }
+        
+        new Vue({
+          el: '#app',
+          components: {
+            'app-header': appHeader,
+            'app-content': appContent
+          },
+          data: {
+            message: 'hi props',
+            num: 10
+          }
+        })
+
+## Emit
+
+## 라우터
+
+## HTTP 통신 라이브러리 axios
+
+## 템플릿 문법 : watch v-show, submit 이벤트 처리
+
+## 프로젝트 생성 도구 : Vue CLI
+
+## 싱글 파일 컴포넌트
