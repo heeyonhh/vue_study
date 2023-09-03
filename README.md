@@ -152,9 +152,7 @@ single page application : 일반적 페이지는 전체가 다시 로딩 되지�
 
 ## HTTP 통신 라이브러리 axios
 
-## 템플릿 문법 : 데이터 바인딩, 클래스 바인딩, v-model 속성, v-if, v-show, submit 이벤트 처리
-
-## 템플릿 문법 : watch
+## 템플릿 문법 : watch v-show, submit 이벤트 처리
 
 ## 프로젝트 생성 도구 : Vue CLI
 
